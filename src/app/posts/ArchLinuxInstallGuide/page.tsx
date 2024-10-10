@@ -64,10 +64,14 @@ export default async function Post() {
             href="https://archlinux.org/"
             className="font-bold text-blue-500 underline"
           >
-            Arch Linux, veja também o video no{' '}
-            <Link href="https://youtu.be/908zigzqQ90?si=CrAxLvhAeIshAzP3">
-              You Tube
-            </Link>
+            Arch Linux
+          </Link>
+          , veja também o video no{' '}
+          <Link
+            href="https://youtu.be/908zigzqQ90?si=CrAxLvhAeIshAzP3"
+            className="font-bold text-blue-500 underline"
+          >
+            You Tube
           </Link>
           . Quero fazer uma instalação limpa com{' '}
           <Link
