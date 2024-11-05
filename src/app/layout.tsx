@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import './globals.css'
 import { Metadata } from 'next'
+import Provider from './services/provider'
 
 export const metadata: Metadata = {
   title: 'NextLevelCodeBlog',
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <Provider>{children}</Provider>
         {/* Rodapé Fixo */}
         <footer
           id="footer"

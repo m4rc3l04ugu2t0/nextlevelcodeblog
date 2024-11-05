@@ -3,16 +3,15 @@ import { Post } from '../types/index'
 
 export async function fetchPosts(): Promise<Post[]> {
   try {
-    const res = await axios.get(`${process.env.API_URL}posts`)
-    return res.data
+    return (await axios.get<Post[]>("http://192.168.0.108/api/posts")).data
   } catch (error) {
     throw new Error(`Failed to fetch posts: ${error}`)
   }
 }
 
-export async function fetchPostImages(postName: string): Promise<string[]> {
+export async function fetchPostImage(postName: string): Promise<string[]> {
   try {
-    const res = await axios.get(`${process.env.API_URL}post/${postName}/images`)
+    const res = await axios.get("http://192.168.0.108/api/post/" + postName + "/images");
     return res.data
   } catch (error) {
     throw new Error(`Failed to fetch posts: ${error}}`)
