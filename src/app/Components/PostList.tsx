@@ -6,33 +6,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePosts } from '../services/queries';
 import NoPostsFound from './PostNotFound';
+import ErrorMessage from './ErrorMessage';
 
 export default function PostsList() {
   const posts = usePosts();
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    if (posts.isSuccess && posts.data) {
-      setFilteredPosts(posts.data);
-    }
-  }, [posts.data, posts.isSuccess]);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const term = e.target.value;
-    setSearchTerm(term);
-
-    // Filtra os posts com base no título
-    if (posts.data) {
-      const filtered = posts.data.filter((post) =>
-        post.title.toLowerCase().includes(term.toLowerCase())
-      );
-      setFilteredPosts(filtered);
-    }
-  };
-
   if (posts.isLoading) {
+    console.log(posts.data);
     return (
       <div className="flex justify-center items-center h-64 space-x-2">
         <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 border-solid"></div>
@@ -43,7 +23,8 @@ export default function PostsList() {
 
 
   if (posts.isError) {
-    return <p>Error: {posts.error.message}</p>;
+    console.log(posts.data);
+    return <ErrorMessage message={posts.error.message} />;
   }
 
     return (
@@ -54,8 +35,6 @@ export default function PostsList() {
           type="text"
           className="rounded-full pl-10 pr-4 py-2 bg-gray-700 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
           placeholder="Pesquisar posts..."
-          value={searchTerm}
-          onChange={handleSearch}
         />
         <svg
           className="w-5 h-5 text-gray-400 absolute left-3 top-2.5"
@@ -75,7 +54,7 @@ export default function PostsList() {
 
       {/* Exibe os posts filtrados */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        { filteredPosts.length === 0 ? <NoPostsFound /> : filteredPosts.map((post) => (
+        { posts.data!.length === 0 ? <NoPostsFound /> : posts.data!.map((post) => (
           <article
             key={post.name}
             className="bg-white shadow-md rounded-lg overflow-hidden"

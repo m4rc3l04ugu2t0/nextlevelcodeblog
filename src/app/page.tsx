@@ -1,6 +1,4 @@
 import Link from 'next/link'
-// import dynamic from 'next/dynamic'
-import { fetchPosts } from './services/api'
 import Div from './Components/Div'
 import H1 from './Components/H1'
 import P from './Components/P'
@@ -8,13 +6,9 @@ import H2 from './Components/H2'
 import Header from './Components/Header'
 import PostsList from './Components/PostList'
 
-// const PostsList = dynamic(() => import('./Components/PostList'))
-
 export const revalidate = 60 // Revalida os dados a cada 60 segundos
 
 export default async function Home() {
-  const posts = await fetchPosts() // Busca posts no servidor
-
   return (
     <Div className="flex flex-col min-h-screen">
       <Header />
@@ -29,7 +23,7 @@ export default async function Home() {
             Bitcoin. As postagens serão sempre uma transcrição dos vídeos
             postados em meu canal do{' '}
             <Link
-              href={'tube.com/'}
+              href={'https://www.youtube.com'}
               className="font-bold text-blue-500 underline"
             >
               YouTube
