@@ -1,31 +1,52 @@
-// components/PostsList.tsx - Client Component
 'use client'
 
-import { useState } from 'react'
-import { Post } from '../types/index'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
+import { Post } from '../types/index';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePosts } from '../services/queries';
+import NoPostsFound from './PostNotFound';
 
-interface PostsListProps {
-  initialPosts: Post[]
-}
+export default function PostsList() {
+  const posts = usePosts();
 
-export default function PostsList({ initialPosts }: PostsListProps) {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [filteredPosts, setFilteredPosts] = useState<Post[]>(initialPosts)
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    if (posts.isSuccess && posts.data) {
+      setFilteredPosts(posts.data);
+    }
+  }, [posts.data, posts.isSuccess]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const term = e.target.value
-    setSearchTerm(term)
+    const term = e.target.value;
+    setSearchTerm(term);
 
     // Filtra os posts com base no título
-    const filtered = initialPosts.filter((post) =>
-      post.title.toLowerCase().includes(term.toLowerCase())
-    )
-    setFilteredPosts(filtered)
+    if (posts.data) {
+      const filtered = posts.data.filter((post) =>
+        post.title.toLowerCase().includes(term.toLowerCase())
+      );
+      setFilteredPosts(filtered);
+    }
+  };
+
+  if (posts.isLoading) {
+    return (
+      <div className="flex justify-center items-center h-64 space-x-2">
+        <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 border-solid"></div>
+        <span className="text-blue-500 text-lg font-semibold">Carregando posts...</span>
+      </div>
+    );
+}
+
+
+  if (posts.isError) {
+    return <p>Error: {posts.error.message}</p>;
   }
 
-  return (
+    return (
     <>
       {/* Input de pesquisa */}
       <div className="relative mb-8">
@@ -54,40 +75,38 @@ export default function PostsList({ initialPosts }: PostsListProps) {
 
       {/* Exibe os posts filtrados */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map((post) => (
-            <article
-              key={post.name}
-              className="bg-white shadow-md rounded-lg overflow-hidden"
-            >
-              <Image
-                className="w-full h-48 object-cover"
-                src={post.images[0]}
-                alt={post.title}
-                width={800}
-                height={600}
-              />
-              <div className="p-4">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">
-                  {post.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 mb-4">
-                  {post.description.substring(0, 100)}...
-                </p>
-                <Link
-                  href={`/posts/${post.name}`}
-                  replace
-                  className="text-blue-600 hover:underline"
-                >
-                  Leia mais
-                </Link>
-              </div>
-            </article>
-          ))
-        ) : (
-          <p className="text-gray-700">Nenhum post encontrado</p>
-        )}
+        { filteredPosts.length === 0 ? <NoPostsFound /> : filteredPosts.map((post) => (
+          <article
+            key={post.name}
+            className="bg-white shadow-md rounded-lg overflow-hidden"
+          >
+            <Image
+              className="w-full h-48 object-cover"
+              src={post.images[0]}
+              alt={post.title}
+              width={800}
+              height={600}
+              priority
+              loading='eager'
+            />
+            <div className="p-4">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                {post.title}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-4">
+                {post.description.substring(0, 100)}...
+              </p>
+              <Link
+                href={`/posts/${post.name}`}
+                replace
+                className="text-blue-600 hover:underline"
+              >
+                Leia mais
+              </Link>
+            </div>
+          </article>
+        ))}
       </section>
     </>
-  )
+  );
 }
