@@ -3,7 +3,7 @@ import { Post } from '../types/index'
 
 export async function fetchPosts(): Promise<Post[]> {
   try {
-    return (await axios.get<Post[]>(`${process.env.API_URL}posts`)).data
+    return (await axios.get<Post[]>(`${process.env.url_api}posts`)).data
   } catch (error) {
     throw new Error(`Failed to fetch posts: ${error}`)
   }
