@@ -7,7 +7,7 @@ export async function fetchPosts(): Promise<Post[]> {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
       }
     })).data
   } catch (error) {
@@ -21,7 +21,7 @@ export async function fetchPostImage(postName: string): Promise<string[]> {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
-        'Accss-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
       }
     });
     return res.data
