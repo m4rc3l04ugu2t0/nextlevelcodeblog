@@ -6,7 +6,7 @@ export async function fetchPosts(): Promise<Post[]> {
     return (await axios.get<Post[]>(`${process.env.NEXT_PUBLIC_API_URL}/posts`, {
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': process.env.API_KEY,
+        'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
       }
     })).data
   } catch (error) {
@@ -19,7 +19,7 @@ export async function fetchPostImage(postName: string): Promise<string[]> {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${postName}/images`, {
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': process.env.API_KEY,
+      'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
       }
     });
     return res.data
