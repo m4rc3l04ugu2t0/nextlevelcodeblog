@@ -19,17 +19,15 @@ export default function PostsList() {
         <span className="text-blue-500 text-lg font-semibold">Carregando posts...</span>
       </div>
     );
-}
+  }
 
 
   if (posts.isError) {
-    console.log(posts.data);
     return <ErrorMessage message={posts.error.message} />;
   }
 
     return (
     <>
-      {/* Input de pesquisa */}
       <div className="relative mb-8">
         <input
           type="text"

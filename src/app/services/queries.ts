@@ -4,7 +4,11 @@ import { fetchPostImage, fetchPosts } from "./api";
 export function usePosts() {
   return useQuery({
     queryKey: ['posts'],
-    queryFn: fetchPosts,
+    queryFn: () => {
+      let posts = fetchPosts();
+      console.log(posts);
+      return posts
+    },
   })
 }
 
