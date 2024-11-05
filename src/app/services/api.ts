@@ -7,6 +7,7 @@ export async function fetchPosts(): Promise<Post[]> {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
+        'Access-Control-Allow-Origin': '*',
       }
     })).data
   } catch (error) {
@@ -19,7 +20,8 @@ export async function fetchPostImage(postName: string): Promise<string[]> {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${postName}/images`, {
       headers: {
         'Content-Type': 'application/json',
-      'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
+        'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
+        'Accss-Control-Allow-Origin': '*',
       }
     });
     return res.data
