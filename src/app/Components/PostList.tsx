@@ -5,6 +5,7 @@ import { Post } from '../types/index';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePosts } from '../services/queries';
+import NoPostsFound from './PostNotFound';
 
 export default function PostsList() {
   const posts = usePosts();
@@ -74,7 +75,7 @@ export default function PostsList() {
 
       {/* Exibe os posts filtrados */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        { filteredPosts.length === 0 ? <p>Nenhum post encontrado</p> : filteredPosts.map((post) => (
+        { filteredPosts.length === 0 ? <NoPostsFound /> : filteredPosts.map((post) => (
           <article
             key={post.name}
             className="bg-white shadow-md rounded-lg overflow-hidden"
