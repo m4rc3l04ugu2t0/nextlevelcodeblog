@@ -3,7 +3,7 @@ import { Post } from '../types/index'
 
 export async function fetchPosts(): Promise<Post[]> {
   try {
-    return (await axios.get<Post[]>(`${process.env.API_URL}/posts`, {
+    return (await axios.get<Post[]>(`${process.env.NEXT_PUBLIC_API_URL}/posts`, {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': process.env.API_KEY,
@@ -16,7 +16,7 @@ export async function fetchPosts(): Promise<Post[]> {
 
 export async function fetchPostImage(postName: string): Promise<string[]> {
   try {
-    const res = await axios.get(`${process.env.API_URL}/post/${postName}/images`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${postName}/images`, {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': process.env.API_KEY,
