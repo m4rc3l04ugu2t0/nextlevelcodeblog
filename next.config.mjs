@@ -15,7 +15,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://backend-newsletter.onrender.com", // Set your origin
+            value: "https://nextlevelcodeblog.netlify.app/", // Set your origin
           },
           {
             key: "Access-Control-Allow-Methods",
