@@ -8,7 +8,7 @@ export async function fetchPosts(): Promise<Post[]> {
         'Content-Type': 'application/json',
         'Accept': '*/*',
         'Access-Control-Allow-Credentials': 'true',
-        'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
+        'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
         'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
       }
     })).data
@@ -21,10 +21,10 @@ export async function fetchPostImage(postName: string): Promise<string[]> {
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${postName}/images`, {
       headers: {
-                'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
         'Accept': '*/*',
         'Access-Control-Allow-Credentials': 'true',
-        'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
+        'x-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
         'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
       }
     });
