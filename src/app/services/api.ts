@@ -7,6 +7,7 @@ export async function fetchPosts(): Promise<Post[]> {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*',
+        'Access-Control-Allow-Credentials': 'true',
         'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
         'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
       }
