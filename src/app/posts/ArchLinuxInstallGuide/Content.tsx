@@ -10,7 +10,7 @@ import { usePostImage } from "@/app/services/queries"
 import Image from "next/image"
 
 export default function Main() {
-  const { data: post_images, isLoading } = usePostImage('ArchLinuxInstallGuide');
+  const { data: post_images, isLoading } = usePostImage(process.env.POST_ARCHLINUX_INSTALL_GUIDE!);
 
   return (
     <>
