@@ -44,7 +44,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![1]}
+              src={post_images![0]}
               alt="command_output"
               width={800}
               height={400}
@@ -133,7 +133,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![2]}
+              src={post_images![1]}
               alt="command_output"
               width={800}
               height={400}
@@ -152,7 +152,7 @@ export default function Main() {
           {isLoading ? (
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
-            <Video src={post_images![3]} />
+            <Video src={post_images![2]} />
           )}
         </Div>
         <H3>Partições criadas: </H3>
@@ -162,7 +162,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![4]}
+              src={post_images![3]}
               alt="command_output"
               width={800}
               height={400}
@@ -312,7 +312,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![5]}
+              src={post_images![4]}
               alt="command_output"
               width={800}
               height={400}
@@ -344,7 +344,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![6]}
+              src={post_images![5]}
               alt="command_output"
               width={800}
               height={400}
