@@ -2,6 +2,7 @@
 
 import CopyToClipboardButton from "@/app/Components/Clipboard"
 import Div from "@/app/Components/Div"
+import ErrorMessage from "@/app/Components/ErrorMessage"
 import H2 from "@/app/Components/H2"
 import H3 from "@/app/Components/H3"
 import P from "@/app/Components/P"
@@ -10,7 +11,11 @@ import { usePostImage } from "@/app/services/queries"
 import Image from "next/image"
 
 export default function Main() {
-  const { data: post_images, isLoading } = usePostImage(process.env.POST_ARCHLINUX_INSTALL_GUIDE!);
+  const { data: post_images, isLoading, isError, error  } = usePostImage(process.env.POST_ARCHLINUX_INSTALL_GUIDE!);
+
+  if (!isError) {
+    return <ErrorMessage message="Ocorreu um erro ao carregar o post." />
+  }
 
   return (
     <>
