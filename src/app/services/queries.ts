@@ -6,7 +6,6 @@ export function usePosts() {
     queryKey: ['posts'],
     queryFn: () => {
       let posts = fetchPosts();
-      console.log(posts);
       return posts
     },
   })

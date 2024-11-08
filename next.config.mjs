@@ -26,6 +26,10 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type, Authorization",
           },
+          {
+            key: "X-Api-Key",
+            vsalue: process.env.NEXT_PUBLIC_API_KEY
+          }
         ],
       },
     ];
