@@ -32,6 +32,19 @@ const nextConfig = {
           }
         ],
       },
+      {
+        source: '/_next/image(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=180, s-maxage=180, stale-while-revalidate=180',
+          },
+          {
+            key: 'X-Api-Key',
+            vsalue: process.env.NEXT_PUBLIC_API_KEY
+          }
+        ],
+      }
     ];
   },
 }
