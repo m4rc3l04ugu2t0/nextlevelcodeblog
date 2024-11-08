@@ -12,7 +12,6 @@ export default function PostsList() {
   const posts = usePosts();
 
   if (posts.isLoading) {
-    console.log(posts.data);
     return (
       <div className="flex justify-center items-center h-64 space-x-2">
         <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 border-solid"></div>
@@ -59,7 +58,7 @@ export default function PostsList() {
           >
             <Image
               className="w-full h-48 object-cover"
-              src={post.images[0]}
+              src={post.cover_image}
               alt={post.title}
               width={800}
               height={600}
