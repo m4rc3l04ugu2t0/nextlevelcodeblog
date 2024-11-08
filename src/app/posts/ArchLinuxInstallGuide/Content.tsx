@@ -13,7 +13,7 @@ import Image from "next/image"
 export default function Main() {
   const { data: post_images, isLoading, isError, error  } = usePostImage();
 
-  if (!isError) {
+  if (isError) {
     return <ErrorMessage message="Ocorreu um erro ao carregar o post." />
   }
 
