@@ -11,9 +11,9 @@ export function usePosts() {
   })
 }
 
-export function usePostImage(postName: string) {
+export function usePostImage() {
   return useQuery({
-    queryKey: ['post_images', postName],
-    queryFn: () => fetchPostImage(postName)
+    queryKey: ['post_images'],
+    queryFn: fetchPostImage
   })
 }
