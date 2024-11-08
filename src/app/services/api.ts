@@ -24,7 +24,7 @@ export async function fetchPostImage(postName: string): Promise<string[]> {
         'Content-Type': 'application/json',
         'Accept': '*/*',
         'Access-Control-Allow-Credentials': 'true',
-        'x-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
+        'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
         'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
       }
     });
