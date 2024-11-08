@@ -19,7 +19,7 @@ export async function fetchPosts(): Promise<Post[]> {
 
 export async function fetchPostImage(postName: string): Promise<string[]> {
   try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/posts/${postName}/images`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${postName}/images`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*',
