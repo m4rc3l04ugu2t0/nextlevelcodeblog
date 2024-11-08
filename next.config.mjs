@@ -28,7 +28,7 @@ const nextConfig = {
           },
           {
             key: "X-Api-Key",
-            vsalue: process.env.NEXT_PUBLIC_API_KEY
+            value: process.env.NEXT_PUBLIC_API_KEY
           }
         ],
       },
@@ -41,7 +41,7 @@ const nextConfig = {
           },
           {
             key: 'X-Api-Key',
-            vsalue: process.env.NEXT_PUBLIC_API_KEY
+            value: process.env.NEXT_PUBLIC_API_KEY
           }
         ],
       }
