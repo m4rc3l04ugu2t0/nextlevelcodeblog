@@ -7,11 +7,12 @@ import H2 from "@/app/Components/H2"
 import H3 from "@/app/Components/H3"
 import P from "@/app/Components/P"
 import { Video } from "@/app/Components/Video"
-import { usePostImage } from "@/app/services/queries"
+import { usePostImage, usePostVideo } from "@/app/services/queries"
 import Image from "next/image"
 
 export default function Main() {
-  const { data: post_images, isLoading, isError, error  } = usePostImage();
+  const { data: post_images, isLoading, isError, error  } = usePostImage(process.env.NEXT_PUBLIC_POST_ARCHLINUX_INSTALL_GUIDE!);
+  const { data: post_videos } = usePostVideo(process.env.NEXT_PUBLIC_POST_ARCHLINUX_INSTALL_GUIDE!);
 
   if (isError) {
     return <ErrorMessage message="Ocorreu um erro ao carregar o post." />
@@ -157,7 +158,7 @@ export default function Main() {
           {isLoading ? (
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
-            <Video src={post_images![2]} />
+            <Video src={post_videos![0]} />
           )}
         </Div>
         <H3>Partições criadas: </H3>
@@ -167,7 +168,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![3]}
+              src={post_images![2]}
               alt="command_output"
               width={800}
               height={400}
@@ -317,7 +318,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![4]}
+              src={post_images![3]}
               alt="command_output"
               width={800}
               height={400}
@@ -349,7 +350,7 @@ export default function Main() {
             <Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![5]}
+              src={post_images![4]}
               alt="command_output"
               width={800}
               height={400}

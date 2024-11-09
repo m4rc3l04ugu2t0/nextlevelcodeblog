@@ -17,9 +17,26 @@ export async function fetchPosts(): Promise<Post[]> {
   }
 }
 
-export async function fetchPostImage(): Promise<string[]> {
+export async function fetchPostImage(post_id: string): Promise<string[]> {
   try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${process.env.NEXT_PUBLIC_POST_ARCHLINUX_INSTALL_GUIDE}/images`, {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${post_id}/images`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': '*/*',
+        'Access-Control-Allow-Credentials': 'true',
+        'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
+        'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
+      }
+    });
+    return res.data
+  } catch (error) {
+    throw new Error(`Failed to fetch posts: ${error}}`)
+  }
+}
+
+export async function fetchPostVideo(post_id: string): Promise<string[]> {
+  try {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${post_id}/videos`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*',
