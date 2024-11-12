@@ -32,7 +32,7 @@ export default function Header() {
               className={
                 usePathname() === '/'
                   ? 'flex items-center text-blue-400 font-bold hover:text-blue-300 transition duration-200'
-                  : 'text-gray-400 hover:text-gray-200 transition duration-200'
+                  : 'flex items-center text-gray-400 hover:text-gray-200 transition duration-200'
               }
             >
               <FaHome className="h-5 w-5 mr-1" />
