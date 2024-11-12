@@ -8,8 +8,8 @@ import { usePostImage, usePostVideo } from "@/app/services/queries"
 import Image from "next/image"
 
 export default function Main() {
-  const { data: post_images, isLoading, isError, error  } = usePostImage(process.env.NEXT_PUBLIC_POST_ARCHLINUX_INSTALL_GUIDE!);
-  const { data: post_videos } = usePostVideo(process.env.NEXT_PUBLIC_POST_ARCHLINUX_INSTALL_GUIDE!);
+  const { data: post_images, isLoading, isError  } = usePostImage(process.env.NEXT_PUBLIC_POST_ARCHLINUX_INSTALL_GUIDE!);
+  const { data: post_videos, isLoading: isLoadingVideo } = usePostVideo(process.env.NEXT_PUBLIC_POST_ARCHLINUX_INSTALL_GUIDE!);
 
   if (isError) {
     return <ErrorMessage message="Ocorreu um erro ao carregar o post." />
@@ -152,7 +152,7 @@ export default function Main() {
         <CopyToClipboardButton text="fdisk /dev/sda" />
         <Components.Div className="pb-4">
           <Components.P>Output do comando:</Components.P>
-          {isLoading ? (
+          {isLoadingVideo ? (
             <Components.Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Video src={post_videos![0]} />
