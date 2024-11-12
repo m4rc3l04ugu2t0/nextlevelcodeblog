@@ -21,8 +21,8 @@ export default function PostsList() {
   if (posts.isLoading) {
     return (
       <div className="flex justify-center items-center h-64 space-x-2">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 border-solid"></div>
-        <span className="text-blue-500 text-lg font-semibold">
+        <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-teal-500 border-solid"></div>
+        <span className="text-teal-500 text-lg font-semibold">
           Carregando posts...
         </span>
       </div>
@@ -43,7 +43,7 @@ export default function PostsList() {
         <input
           type="text"
           {...register("searchQuery")}
-          className="rounded-full pl-10 pr-4 py-2 bg-gray-700 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+          className="rounded-full pl-10 pr-4 py-2 bg-[#1a1a1a] text-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 w-full placeholder-gray-500"
           placeholder="Pesquisar posts..."
         />
         <svg
@@ -68,7 +68,7 @@ export default function PostsList() {
           filteredPosts.map((post) => (
             <article
               key={post.name}
-              className="bg-white shadow-md rounded-lg overflow-hidden"
+              className="bg-[#242424] shadow-lg rounded-lg overflow-hidden"
             >
               <Image
                 className="w-full h-48 object-cover"
@@ -80,16 +80,16 @@ export default function PostsList() {
                 loading="eager"
               />
               <div className="p-4">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-100">
                   {post.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 mb-4">
+                <p className="text-sm sm:text-base text-gray-400 mb-4">
                   {post.description.substring(0, 100)}...
                 </p>
                 <Link
                   href={`/posts/${post.name}`}
                   replace
-                  className="text-blue-600 hover:underline"
+                  className="text-teal-500 hover:text-teal-400 transition duration-200 underline"
                 >
                   Leia mais
                 </Link>
