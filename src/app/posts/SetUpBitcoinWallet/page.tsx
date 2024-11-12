@@ -1,4 +1,4 @@
-import PostInProgress from "@/app/Components/post_in_progress";
+import PostInProgress from "@/app/Components/Post_in_progress";
 
 export default function Page() {
   return (
