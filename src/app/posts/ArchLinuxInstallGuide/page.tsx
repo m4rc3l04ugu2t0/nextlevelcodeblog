@@ -16,7 +16,7 @@ export default function Post() {
 
   return (
     <Components.Div>
-      <ArchLinuxInstallGuide.Header />
+      <Components.Header />
       {/* Conteúdo Principal */}
       <Components.Main>
         <Components.H1>Arch Linux Install Guide</Components.H1>

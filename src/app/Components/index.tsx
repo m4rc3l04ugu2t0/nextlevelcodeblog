@@ -10,6 +10,7 @@ import { Video } from "./Video";
 import ErrorMessage from "./ErrorMessage";
 import Clipbiiard from "./Clipboard";
 import Nav from "./Nav";
+import Header from "./Header";
 
 export const Components = {
   Main,
@@ -23,5 +24,6 @@ export const Components = {
   Video,
   ErrorMessage,
   Clipbiiard,
-  Nav
+  Nav,
+  Header
 }
