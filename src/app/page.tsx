@@ -24,6 +24,8 @@ export default async function Home() {
             <Link
               href={'https://www.youtube.com'}
               className="font-bold text-blue-500 underline"
+              target='_blank'
+              rel="noopener noreferrer"
             >
               YouTube
             </Link>
@@ -31,14 +33,17 @@ export default async function Home() {
             <Link
               href={'https://www.youtube.com/@NextLevelCode014'}
               className="font-bold text-blue-500 underline"
-              passHref
+              target='_blank'
+              rel="noopener noreferrer"
             >
-              NextLevelCode
+             NextLevelCode
             </Link>
             . Você encontrará, em grande parte, tutoriais sobre
             <Link
               href={'https://www.linux.org/'}
               className="font-bold text-blue-500 underline"
+              target='_blank'
+              rel="noopener noreferrer"
             >
               {' '}
               Linux
@@ -47,6 +52,8 @@ export default async function Home() {
             <Link
               href={'https://bitcoin.org/en/'}
               className="font-bold text-blue-500 underline"
+              target='_blank'
+              rel="noopener noreferrer"
             >
               Bitcoin
             </Link>

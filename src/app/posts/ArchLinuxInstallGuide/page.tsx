@@ -26,11 +26,13 @@ export default function Post() {
           <Link
             href="https://archlinux.org/"
             className="font-bold text-blue-500 underline"
+            target='_blank'
+            rel="noopener noreferrer"
           >
             Arch Linux
           </Link>
           , veja também o video no{' '}
-            <Link href="https://youtu.be/908zigzqQ90?si=CrAxLvhAeIshAzP3">
+            <Link href="https://youtu.be/908zigzqQ90?si=CrAxLvhAeIshAzP3" target='_blank' rel="noopener noreferrer">
               You Tube
             </Link>
           . Quero fazer uma instalação limpa com{' '}
@@ -44,6 +46,8 @@ export default function Post() {
           <Link
             href="https://wiki.archlinux.org/title/Btrfs"
             className="font-bold text-blue-500 underline"
+            target='_blank'
+            rel="noopener noreferrer"
           >
             Btrfs{' '}
           </Link>
@@ -51,6 +55,8 @@ export default function Post() {
           <Link
             href="https://www.ventoy.net/en/download.html"
             className="font-bold text-blue-500 underline"
+            target='_blank'
+            rel="noopener noreferrer"
           >
             Ventoy
           </Link>{' '}
@@ -58,6 +64,8 @@ export default function Post() {
           <Link
             href="https://youtu.be/11CkqZQ3scE?si=yIqjhctwCn8R7pOD"
             className="font-bold text-blue-500 underline"
+            target='_blank'
+            rel="noopener noreferrer"
           >
             Diolinux
           </Link>
@@ -65,6 +73,8 @@ export default function Post() {
           <Link
             href="https://archlinux.org/download/"
             className="font-bold text-blue-500 underline"
+            target='_blank'
+            rel="noopener noreferrer"
           >
             Arch Linux
           </Link>
