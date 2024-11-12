@@ -13,9 +13,7 @@ export default async function Home() {
   return (
     <Div className="flex flex-col min-h-screen bg-[#1a1a1a] text-gray-100 ">
       <Header />
-      {/* Conteúdo Principal */}
       <main className="container mx-auto p-4 flex-grow bg-[#1a1a1a] text-gray-100">
-        {/* Texto sobre o propósito do blog */}
         <section className="mb-8">
           <H1 className='text-slate-300 text-2xl font-bold'>Bem-vindo ao meu Blog!</H1>
           <Components.P className={stylesComponets.baseStyleP}>
@@ -64,7 +62,6 @@ export default async function Home() {
           Escolha um post abaixo para começar a leitura.
         </Components.P>
 
-        {/* Lista de Posts com funcionalidade de pesquisa */}
         <PostsList />
       </main>
     </Div>
