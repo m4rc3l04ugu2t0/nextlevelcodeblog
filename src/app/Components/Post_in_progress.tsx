@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function PostInProgress() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#1a1a1a] p-4 text-center">
-      <h1 className="text-4xl font-bold text-gray-100 mb-4">Poste em Desenvolvimento</h1>
+      <h1 className="text-4xl font-bold text-gray-100 mb-4">Post em Desenvolvimento</h1>
       <p className="text-lg text-gray-300 mb-6">
         O conteúdo deste post ainda está sendo preparado e será publicado em breve.
       </p>
