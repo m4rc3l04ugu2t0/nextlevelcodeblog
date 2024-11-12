@@ -16,6 +16,7 @@ const CopyToClipboardButton = ({
     try {
       await copy(text)
       setIsCopied(true)
+      setTimeout(() => setIsCopied(false), 2000) // Redefine após 2 segundos
     } catch (error) {
       console.error('Failed to copy text to clipboard', error)
     }
@@ -27,7 +28,10 @@ const CopyToClipboardButton = ({
     >
       <button
         onClick={handleCopyClick}
-        className="absolute top-2 right-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+        aria-label="Copy to clipboard"
+        className={`absolute top-2 right-2 ${
+          isCopied ? 'bg-green-500' : 'bg-blue-500'
+        } hover:bg-blue-700 text-white font-bold py-1 px-2 rounded transition-colors`}
       >
         {isCopied ? 'Copied!' : 'Copy'}
       </button>
