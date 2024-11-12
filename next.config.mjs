@@ -3,8 +3,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'http://192.168.0.108',
+        protocol: 'https',
+        hostname: 'backend-newsletter.onrender.com',
         pathname: '/api/assets/**',
       }
     ]
