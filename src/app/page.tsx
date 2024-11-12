@@ -1,23 +1,24 @@
 import Link from 'next/link'
 import Div from './Components/Div'
 import H1 from './Components/H1'
-import P from './Components/P'
 import H2 from './Components/H2'
 import Header from './Components/Header'
 import PostsList from './Components/PostList'
+import { Components } from './Components'
+import { stylesComponets } from '@/styles'
 
 export const revalidate = 60 // Revalida os dados a cada 60 segundos
 
 export default async function Home() {
   return (
-    <Div className="flex flex-col min-h-screen">
+    <Div className="flex flex-col min-h-screen bg-[#1a1a1a] text-gray-100 ">
       <Header />
       {/* Conteúdo Principal */}
-      <main className="container mx-auto p-4 flex-grow">
+      <main className="container mx-auto p-4 flex-grow bg-[#1a1a1a] text-gray-100">
         {/* Texto sobre o propósito do blog */}
         <section className="mb-8">
-          <H1>Bem-vindo ao meu Blog!</H1>
-          <P>
+          <H1 className='text-slate-300 text-2xl font-bold'>Bem-vindo ao meu Blog!</H1>
+          <Components.P className={stylesComponets.baseStyleP}>
             Blog desenvolvido com fins educacionais e para a propagação de
             ideias e estudos, tanto tecnológicos quanto políticos e sobre
             Bitcoin. As postagens serão sempre uma transcrição dos vídeos
@@ -54,14 +55,14 @@ export default async function Home() {
             . Espero poder ajudar toda a comunidade assim como fui ajudado um
             dia. Agradeço a quem se interessa e gosta do conteúdo. Divirtam-se
             aprendendo!
-          </P>
+          </Components.P>
         </section>
 
         <H2>Últimos Posts</H2>
-        <P className="text-gray-700 mb-8">
+        <Components.P className={stylesComponets.baseStyleP}>
           Aqui você encontra as últimas atualizações, artigos e muito mais.
           Escolha um post abaixo para começar a leitura.
-        </P>
+        </Components.P>
 
         {/* Lista de Posts com funcionalidade de pesquisa */}
         <PostsList />

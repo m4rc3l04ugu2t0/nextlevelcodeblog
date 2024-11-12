@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .responsive-text {
-    @apply text-base md:text-lg lg:text-xl text-justify leading-relaxed text-gray-700;
+    @apply text-base md:text-lg lg:text-xl text-justify leading-relaxed text-gray-400;
 }
 
 .responsive-reading {
-    @apply text-3xl md:text-3xl lg:text-xl;
+    @apply text-3xl md:text-3xl lg:text-xl text-slate-300;
 }

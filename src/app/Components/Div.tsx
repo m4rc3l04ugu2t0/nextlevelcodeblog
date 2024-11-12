@@ -4,5 +4,5 @@ export default function Div(
   props: HTMLAttributes<HTMLDivElement>,
   className?: string
 ) {
-  return <div className={className} {...props} />
+  return <div className={className || "flex flex-col min-h-screen"} {...props} />
 }

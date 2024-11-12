@@ -1,7 +1,6 @@
-import H1 from '@/app/Components/H1'
-import P from '@/app/Components/P'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Components } from "@/app/Components";
 import { ArchLinuxInstallGuide } from '.'
 
 export const metadata: Metadata = {
@@ -13,15 +12,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default async function Post() {
+export default function Post() {
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <Components.Div>
       <ArchLinuxInstallGuide.Header />
       {/* Conteúdo Principal */}
-      <main className="container max-w-[800px] mx-auto p-4 flex-grow">
-        <H1 className="text-4xl font-bold mb-6">Arch Linux Install Guide</H1>
-        <P className="responsive-text mb-8">
+      <Components.Main>
+        <Components.H1>Arch Linux Install Guide</Components.H1>
+        <Components.P>
           Nesse blog vou esta fazendo a instalação do{' '}
           <Link
             href="https://archlinux.org/"
@@ -69,9 +68,9 @@ export default async function Post() {
             Arch Linux
           </Link>
           . Tudo pronto, vamos começar!
-        </P>
+        </Components.P>
         <ArchLinuxInstallGuide.Content />
-      </main>
-    </div>
+      </Components.Main>
+    </Components.Div>
   )
 }

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import './globals.css'
 import { Metadata } from 'next'
 import Provider from './services/provider'
+import { Components } from './Components'
+import { stylesComponets } from '@/styles'
 
 export const metadata: Metadata = {
   title: 'NextLevelCodeBlog',
@@ -29,34 +31,26 @@ export default function RootLayout({
         {/* Rodapé Fixo */}
         <footer
           id="footer"
-          className="bg-gray-800 text-gray-300 text-center p-4 mt-auto"
+          className="bg-[#242424] text-gray-100 text-center p-4 mt-auto border-t border-gray-700"
         >
-          {/* Seção Sobre */}
-          <div className="mt-4 text-gray-400">
-            <p className="mb-2">
-              Mandem mensagem por email para qualquer dúvida. Obrigado!
-            </p>
-          </div>
-          <p>
-            Contato:{' '}
-            <Link
-              href="mailto:nextlevelcode014@gmail.com"
-              className="text-blue-500 hover:underline"
-            >
-              nextlevelcode014@gmail.com
-            </Link>
-          </p>
-          <p>
-            GitHub:{' '}
-            <Link
-              href="https://github.com/m4rc3l04ugu2t0"
-              target="_blank"
-              className="text-blue-500 hover:underline"
-            >
-              m4rc3l04ugu2t0
-            </Link>
-          </p>
-          <p>&copy; 2024 NextLevelCodeBlog.</p>
+          <Components.Div className='flex justify-between items-center'>
+            <Components.Nav>
+              <Link
+                href="mailto:nextlevelcode014@gmail.com"
+                className="text-gray-400 hover:text-gray-200 transition duration-200"
+              >
+                nextlevelcode014@gmail.com
+              </Link>
+              <Link
+                href="https://github.com/m4rc3l04ugu2t0"
+                target="_blank"
+                className="text-gray-400 hover:text-gray-200 transition duration-200"
+              >
+                github.com/m4rc3l04ugu2t0
+              </Link>
+            </Components.Nav>
+            <Components.P className='text-gray-400'>&copy; 2024 NextLevelCodeBlog.</Components.P>
+          </Components.Div>
         </footer>
       </body>
     </html>

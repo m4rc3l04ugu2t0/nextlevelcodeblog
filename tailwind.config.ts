@@ -11,6 +11,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        darkGray: '#121212',
+        carbonBlack: '#1C1C1C',
+        leadGray: '#181818',
+        anthracite: '#242424',
+        deepNavy: '#0D1B2A',
       },
     },
   },
