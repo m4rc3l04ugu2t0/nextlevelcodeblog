@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
-export default function Nav({ children }: { children: ReactNode }) {
-  return <nav className="flex gap-6">{children}</nav>
+export default function Nav(
+  props: HTMLAttributes<HTMLDivElement>,) {
+  return <nav  {...props} />
 }
