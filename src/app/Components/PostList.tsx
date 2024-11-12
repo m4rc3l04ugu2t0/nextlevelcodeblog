@@ -88,7 +88,6 @@ export default function PostsList() {
                 </p>
                 <Link
                   href={`/posts/${post.name}`}
-                  replace
                   className="text-teal-500 hover:text-teal-400 transition duration-200 underline"
                 >
                   Leia mais

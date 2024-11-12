@@ -55,13 +55,11 @@ export default async function Home() {
             aprendendo!
           </Components.P>
         </section>
-
         <H2>Últimos Posts</H2>
         <Components.P className={stylesComponets.baseStyleP}>
           Aqui você encontra as últimas atualizações, artigos e muito mais.
           Escolha um post abaixo para começar a leitura.
         </Components.P>
-
         <PostsList />
       </main>
     </Div>
