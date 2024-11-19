@@ -6,7 +6,7 @@ export default function H3(
 ) {
   return (
     <h3
-      className={className || 'responsive-reading text-xl font-semibold mb-4'}
+      className={className || 'responsive-reading font-semibold mb-4'}
       {...props}
     />
   )

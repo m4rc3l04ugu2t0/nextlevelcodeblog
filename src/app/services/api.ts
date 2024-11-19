@@ -3,13 +3,13 @@ import { Post } from '../types/index'
 
 export async function fetchPosts(): Promise<Post[]> {
   try {
-    return (await axios.get<Post[]>(`${process.env.NEXT_PUBLIC_API_URL}/posts`, {
+    return (await axios.get<Post[]>(`http://192.168.0.108/posts`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*',
         'Access-Control-Allow-Credentials': 'true',
-        'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
-        'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
+        'X-Api-Key': 'bread',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
       }
     })).data
   } catch (error) {
@@ -19,13 +19,13 @@ export async function fetchPosts(): Promise<Post[]> {
 
 export async function fetchPostImage(post_id: string): Promise<string[]> {
   try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${post_id}/images`, {
+    const res = await axios.get(`http://192.168.0.108/post/${post_id}/images`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*',
         'Access-Control-Allow-Credentials': 'true',
-        'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
-        'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
+        'X-Api-Key': 'bread',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
       }
     });
     return res.data
@@ -36,13 +36,13 @@ export async function fetchPostImage(post_id: string): Promise<string[]> {
 
 export async function fetchPostVideo(post_id: string): Promise<string[]> {
   try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/post/${post_id}/videos`, {
+    const res = await axios.get(`http://192.168.0.108/post/${post_id}/videos`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*',
         'Access-Control-Allow-Credentials': 'true',
-        'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY,
-        'Access-Control-Allow-Origin': 'https://nextlevelcodeblog.netlify.app'
+        'X-Api-Key': 'bread',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
       }
     });
     return res.data

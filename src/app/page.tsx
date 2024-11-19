@@ -64,7 +64,6 @@ export default async function Home() {
           Escolha um post abaixo para começar a leitura.
         </Components.P>
 
-        {/* Lista de Posts com funcionalidade de pesquisa */}
         <PostsList />
       </main>
     </Div>

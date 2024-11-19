@@ -3,7 +3,6 @@ import './globals.css'
 import { Metadata } from 'next'
 import Provider from './services/provider'
 import { Components } from './Components'
-import { stylesComponets } from '@/styles'
 
 export const metadata: Metadata = {
   title: 'NextLevelCodeBlog',
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
     title: 'NextLevelCodeBlog',
     description: 'Blog educacional sobre Linux, programação e Bitcoin',
     type: 'website',
-    url: 'https://nextlevelcodeblog.com'
+    url: 'http://192.168.0.108',
   }
 }
 
@@ -28,7 +27,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Provider>{children}</Provider>
-        {/* Rodapé Fixo */}
         <footer
           id="footer"
           className="bg-[#242424] text-gray-100 text-center p-4 mt-auto border-t border-gray-700"
