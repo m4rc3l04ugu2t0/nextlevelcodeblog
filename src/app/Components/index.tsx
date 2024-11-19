@@ -8,9 +8,10 @@ import PostsList from "./PostList";
 import NoPostsFound from "./PostNotFound";
 import { Video } from "./Video";
 import ErrorMessage from "./ErrorMessage";
-import Clipbiiard from "./Clipboard";
+import Clipboard from "./Clipboard";
 import Nav from "./Nav";
 import Header from "./Header";
+import MyLink from "./MyLink";
 
 export const Components = {
   Main,
@@ -23,7 +24,8 @@ export const Components = {
   NoPostsFound,
   Video,
   ErrorMessage,
-  Clipbiiard,
+  Clipboard,
   Nav,
-  Header
+  Header,
+  MyLink
 }
