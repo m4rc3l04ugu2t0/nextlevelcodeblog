@@ -217,9 +217,9 @@ export default function Content() {
           />
         )}
 
-      <ul className="list-disc list-inside text-ellipsis text-gray-500">
-        <li className="pl-4">Tails 6.9</li>
-        <Components.P>Essa é a opção padrão para iniciar o Tails. Ela inicia o sistema em um ambiente seguro, utilizando o Tor para navegação anônima e mantendo todas as configurações padrão do sistema.</Components.P>
+      <ul className="list-disc list-inside text-ellipsis text-gray-600">
+        <li className=" pl-4">Tails 6.9</li>
+        {'  '}<Components.P>Essa é a opção padrão para iniciar o Tails. Ela inicia o sistema em um ambiente seguro, utilizando o Tor para navegação anônima e mantendo todas as configurações padrão do sistema.</Components.P>
         <li className="pl-4">Tails 6.9 (Troubleshooting Mode)</li>
         <Components.P>Essa opção inicializa o Tails em um modo de solução de problemas (troubleshooting). É útil para diagnosticar e corrigir problemas, como drivers de hardware incompatíveis. Geralmente, esse modo desativa recursos avançados, como a aceleração de gráficos, para aumentar a compatibilidade com dispositivos problemáticos.</Components.P>
         <li className="pl-4">Tails 6.9 (External Hard Disk)</li>
