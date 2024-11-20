@@ -215,12 +215,12 @@ export default function Content() {
           />
         )}
 
-      <ul className="list-disc list-inside text-ellipsis text-gray-600">
-        <li className="responsive-reading">Tails 6.9</li>
+      <ul className="list-disc list-inside text-ellipsis text-gray-500 pt-4">
+        <li className="text-lg font-bold">Tails 6.9</li>
         <Components.P>Essa é a opção padrão para iniciar o Tails. Ela inicia o sistema em um ambiente seguro, utilizando o Tor para navegação anônima e mantendo todas as configurações padrão do sistema.</Components.P>
-        <li className="responsive-reading">Tails 6.9 (Troubleshooting Mode)</li>
+        <li className="text-lg font-bold">Tails 6.9 (Troubleshooting Mode)</li>
         <Components.P>Essa opção inicializa o Tails em um modo de solução de problemas (troubleshooting). É útil para diagnosticar e corrigir problemas, como drivers de hardware incompatíveis. Geralmente, esse modo desativa recursos avançados, como a aceleração de gráficos, para aumentar a compatibilidade com dispositivos problemáticos.</Components.P>
-        <li className="responsive-reading">Tails 6.9 (External Hard Disk)</li>
+        <li className="text-lg font-bold">Tails 6.9 (External Hard Disk)</li>
         <Components.P>Essa entrada é usada quando o Tails está instalado ou armazenado em um disco rígido externo. Ao selecionar essa opção, o sistema inicializa diretamente do disco externo em vez de outros dispositivos, como um pendrive ou CD.</Components.P>
       </ul>
       <br />
