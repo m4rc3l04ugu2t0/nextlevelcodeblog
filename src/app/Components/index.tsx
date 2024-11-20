@@ -12,6 +12,7 @@ import Clipboard from "./Clipboard";
 import Nav from "./Nav";
 import Header from "./Header";
 import MyLink from "./MyLink";
+import H4 from "./H4";
 
 export const Components = {
   Main,
@@ -27,5 +28,6 @@ export const Components = {
   Clipboard,
   Nav,
   Header,
-  MyLink
+  MyLink,
+  H4
 }
