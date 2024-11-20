@@ -158,6 +158,24 @@ export default function Content() {
       </Components.P>
       <Components.Clipboard text="gpg --import pubkey.txt" />
       <Components.Clipboard text="gpg --verify signature.txt.asc pubkey.txt" />
+      <Components.Clipboard text="cat signature.txt.asc" />
+        {isLoading ? (
+            <Components.Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
+          ) : (
+            <Image
+              src={post_images![3]}
+              alt="command_output"
+              width={800}
+              height={400}
+              loading="eager"
+            />
+          )}
+        <Components.P>
+          Esse comando verifica se a imagem baixada (`tails-amd64-6.9.img`) corresponde à assinatura oficial (`.sig`), confirmando sua integridade e origem.
+        </Components.P>
+        <Components.Clipboard text="echo 129b03505824879b8a4429576e3de6951c8599644c1afcaae80840f79237695a;sha256sum bip39-standalone.html" />
+        <Components.P>Se o hash estiver correto, o comando retornar&aacute; 129b03505824879b8a4429576e3de6951c8599644c1afcaae80840f79237695a.</Components.P>
+
       <Components.P>
         Se o hash estiver correto, o comando retornará um hash esperado.
       </Components.P>
@@ -191,7 +209,7 @@ export default function Content() {
           <Components.Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
         ) : (
           <Image
-            src={post_images![2]}
+            src={post_images![4]}
             alt="command_output"
             width={800}
             height={400}
