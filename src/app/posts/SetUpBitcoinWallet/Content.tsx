@@ -68,7 +68,7 @@ export default function Content() {
           <Components.P>
             Esse comando verifica se a imagem baixada (`tails-amd64-6.9.img`) corresponde à assinatura oficial (`.sig`), confirmando sua integridade e origem.
           </Components.P>
-          <h4 className="text-lg font-semibold mt-4 pb-4">Sobre os avisos:</h4>
+          <h4 className="text-lg font-semibold mt-4 pb-4 text-gray-500">Sobre os avisos:</h4>
           <Components.P>
             <strong>"This key is not certified with a trusted signature"</strong>: Este aviso aparece porque a chave pública do Tails não está assinada por outra chave confiável. Isso é comum e pode ser ignorado se você baixou a chave de uma fonte oficial do Tails.
           </Components.P>
@@ -83,8 +83,63 @@ export default function Content() {
         <Components.P>
           Para instalar o Tails Linux, siga o tutorial oficial no site do Tails: <Components.MyLink href="https://tails.net/install/linux/index.en.html" name="Tails Linux" /> ou no YouTube: <Components.MyLink href="https://youtu.be/P6Ws6V8695Q?si=bJn8lImJGLwoxtp2" name="NextLevelCode" />
         </Components.P>
+        <br />
 
-        <Components.H3>Aguarde para os próximos passos...</Components.H3>
+        <Components.H3>3. Instalação da Electrum.</Components.H3>
+        <Components.P>
+          Para instalar a Electrum, siga o tutorial no meu canal do YouTube: <Components.MyLink href="https://youtu.be/2yZ4mKo5eJ4" name="NextLevelCode" />
+        </Components.P>
+        <h4 className="text-lg font-semibold mt-4 pb-4 text-gray-500">Comandos para a verificação da integridade da Electrum:</h4>
+        <Components.P>Os passos são os mesmos do Tails, mas com o pacote da Electrum.</Components.P>
+        <Components.Clipboard text="gpg --import ThomasV.asc" />
+        <Components.Clipboard text="gpg --verify electrum-4.5.8-x86_64.AppImage.asc electrum-4.5.8-x86_64.AppImage" />
+        <br />
+
+        <Components.H3>4. Instalação da Ian Coleman BIP39 Tool:</Components.H3>
+        <Components.P>
+          Para instalar a Ian Coleman BIP39 Tool, siga o tutorial no meu canal do YouTube: <Components.MyLink href="https://youtu.be/2yZ4mKo5eJ4" name="NextLevelCode" />
+        </Components.P>
+        <Components.P>Commands para a verificação da integridade da Ian Coleman BIP39 Tool:</Components.P>
+        <Components.Clipboard text="gpg --import pubkey.txt" />
+        <Components.Clipboard text="gpg --verify signature.txt.asc" />
+        <Components.Clipboard text="gpg --verify signature.txt.asc pubkey.txt" />
+        <Components.Clipboard text="cat signature.txt.asc" />
+        {isLoading ? (
+            <Components.Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
+          ) : (
+            <Image
+              src={post_images![2]}
+              alt="command_output"
+              width={800}
+              height={400}
+              loading="eager"
+            />
+          )}
+        <Components.P>
+          Esse comando verifica se a imagem baixada (`tails-amd64-6.9.img`) corresponde à assinatura oficial (`.sig`), confirmando sua integridade e origem.
+        </Components.P>
+        <Components.Clipboard text="echo 129b03505824879b8a4429576e3de6951c8599644c1afcaae80840f79237695a;sha256sum bip39-standalone.html" />
+        <Components.P>Se o hash estiver correto, o comando retornar&aacute; 129b03505824879b8a4429576e3de6951c8599644c1afcaae80840f79237695a.</Components.P>
+
+        <Components.H3>5. Mover para o pendrive.</Components.H3>
+        <Components.P>
+          Com tudo isso feito, vamos mover a electrum e a Ian Coleman BIP39 para o pendrive. Com isso não precisaremos de internet para usar o Tails.
+        </Components.P>
+
+        <Components.H3>6. Configurar o Tails.</Components.H3>
+        <Components.P>
+          Para configurar o Tails com Electrum e Ian Coleman BIP39, siga o tutorial no meu canal do YouTube: <Components.MyLink href="https://youtu.be/2yZ4mKo5eJ4" name="NextLevelCode" />
+        </Components.P>
+        <h4 className="text-lg font-semibold mt-4 pb-4 text-gray-500">Caso não saiba a tecla da sua BIOS, use esse comando para obter detalhes da sua BIOS:</h4>
+        <Components.Clipboard text="sudo dmidecode -t 0" />
+
+        <Components.H3>7. Finalização.</Components.H3>
+        <Components.P>
+          Com isso seu sistema está pronto, você pode usar sua carteira de Bitcoin. Mais afirmo que nenhum software é bala de prata, saiba o que está fazendo.
+          Com esse setup vocé pode gerar um papel de identificação, criar uma carteira, enviar e receber bitcoins, fazer transações e muito mais.
+          E sem precisa conectar seu SO com a internet.
+          Se vocé gostou desse conteúdo, deixe um like e deixe seu comentário, isso ajudar&aacute; a NextLevelCode a crescer e ajudar outras pessoas a aprender.
+        </Components.P>
       </Components.Main>
   )
 }
