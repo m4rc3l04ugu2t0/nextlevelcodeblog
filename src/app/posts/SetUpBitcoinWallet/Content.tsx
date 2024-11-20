@@ -184,13 +184,37 @@ export default function Content() {
         sua BIOS:
       </Components.H4>
       <Components.Clipboard text="sudo dmidecode -t 0" />
+      <Components.P>
+        Apos o boot do Tails, essas três entradas indicam as diferentes opções de inicialização disponíveis ao carregar o sistema operacional Tails 6.9 a partir de um pendrive ou outro dispositivo:
+      </Components.P>
+       {isLoading ? (
+          <Components.Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
+        ) : (
+          <Image
+            src={post_images![2]}
+            alt="command_output"
+            width={800}
+            height={400}
+            loading="eager"
+          />
+        )}
+
+      <ul>
+        <li>Tails 6.9</li>
+        <Components.P>Essa é a opção padrão para iniciar o Tails. Ela inicia o sistema em um ambiente seguro, utilizando o Tor para navegação anônima e mantendo todas as configurações padrão do sistema.</Components.P>
+        <li>Tails 6.9 (Troubleshooting Mode)</li>
+        <Components.P>Essa opção inicializa o Tails em um modo de solução de problemas (troubleshooting). É útil para diagnosticar e corrigir problemas, como drivers de hardware incompatíveis. Geralmente, esse modo desativa recursos avançados, como a aceleração de gráficos, para aumentar a compatibilidade com dispositivos problemáticos.</Components.P>
+        <li>Tails 6.9 (External Hard Disk)</li>
+        <Components.P>Essa entrada é usada quando o Tails está instalado ou armazenado em um disco rígido externo. Ao selecionar essa opção, o sistema inicializa diretamente do disco externo em vez de outros dispositivos, como um pendrive ou CD.</Components.P>
+      </ul>
+
       <br />
 
       <Components.H3>7. Finalização.</Components.H3>
       <Components.P>
         Com isso, seu sistema está pronto. Você pode usar sua carteira de Bitcoin.
         Nenhum software é infalível, então saiba o que está fazendo. Se gostou do
-        conteúdo, deixe um like e seu comentário. Isso ajuda o NextLevelCode a
+        conteúdo, deixe um like e seu comentário. Isso nos ajuda a
         crescer e ensinar mais pessoas.
       </Components.P>
     </Components.Main>
