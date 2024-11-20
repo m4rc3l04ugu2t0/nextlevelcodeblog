@@ -174,7 +174,7 @@ export default function Content() {
           Esse comando verifica se a imagem baixada (`tails-amd64-6.9.img`) corresponde à assinatura oficial (`.sig`), confirmando sua integridade e origem.
         </Components.P>
         <Components.Clipboard text="echo 129b03505824879b8a4429576e3de6951c8599644c1afcaae80840f79237695a;sha256sum bip39-standalone.html" />
-        <Components.P>Se o hash estiver correto, o comando retornar&aacute; 129b03505824879b8a4429576e3de6951c8599644c1afcaae80840f79237695a.</Components.P>
+        <Components.P>Se o hash estiver correto, o comando retornar o mesmo hash esperado.</Components.P>
 
       <Components.P>
         Se o hash estiver correto, o comando retornará um hash esperado.
@@ -217,17 +217,15 @@ export default function Content() {
           />
         )}
 
-      <ul>
-        <li>Tails 6.9</li>
+      <ul className="list-disc list-inside text-ellipsis text-gray-500">
+        <li className="pl-4">Tails 6.9</li>
         <Components.P>Essa é a opção padrão para iniciar o Tails. Ela inicia o sistema em um ambiente seguro, utilizando o Tor para navegação anônima e mantendo todas as configurações padrão do sistema.</Components.P>
-        <li>Tails 6.9 (Troubleshooting Mode)</li>
+        <li className="pl-4">Tails 6.9 (Troubleshooting Mode)</li>
         <Components.P>Essa opção inicializa o Tails em um modo de solução de problemas (troubleshooting). É útil para diagnosticar e corrigir problemas, como drivers de hardware incompatíveis. Geralmente, esse modo desativa recursos avançados, como a aceleração de gráficos, para aumentar a compatibilidade com dispositivos problemáticos.</Components.P>
-        <li>Tails 6.9 (External Hard Disk)</li>
+        <li className="pl-4">Tails 6.9 (External Hard Disk)</li>
         <Components.P>Essa entrada é usada quando o Tails está instalado ou armazenado em um disco rígido externo. Ao selecionar essa opção, o sistema inicializa diretamente do disco externo em vez de outros dispositivos, como um pendrive ou CD.</Components.P>
       </ul>
-
       <br />
-
       <Components.H3>7. Finalização.</Components.H3>
       <Components.P>
         Com isso, seu sistema está pronto. Você pode usar sua carteira de Bitcoin.
