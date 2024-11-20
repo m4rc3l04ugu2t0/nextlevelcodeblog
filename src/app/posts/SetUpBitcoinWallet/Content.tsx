@@ -163,7 +163,7 @@ export default function Content() {
             <Components.Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
           ) : (
             <Image
-              src={post_images![3]}
+              src={post_images![2]}
               alt="command_output"
               width={800}
               height={400}
@@ -209,7 +209,7 @@ export default function Content() {
           <Components.Div className="w-full h-[200px] bg-gray-300 animate-pulse" />
         ) : (
           <Image
-            src={post_images![4]}
+            src={post_images![3]}
             alt="command_output"
             width={800}
             height={400}
